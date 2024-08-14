@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BirdsWorld</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(255, 246, 235);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            width: 80vw;
+            margin-bottom: 50px;
+        }
+
+        #pageid {
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            font-size: 4rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card h3 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 15vw;
+            height: 21vh;
+            border-radius: 8px;
+        }
+
+        .card h3{
+            font-size: 1.8vb;
+        }
+        .details {
+            display: none;
+            /* margin-top: 10px; */
+            margin-bottom: 40vh;
+            color: #555;
+            text-align: center;
+            background-color: rgb(216, 216, 216);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* list-style-type: none; */
+            text-decoration: none;
+            font-size: 1.5vb;
+        }
+
+        .details ul{
+            list-style-type: none;
+        }
+
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 246, 235);
+            z-index: 1000;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+        }
+
+        .fullscreen img {
+            width: 40%;
+            height: auto;
+        }
+        .close-button {
+            /* font-size: 2vb; */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 2vb;
+            margin-right: 5vw;
+        }
+
+        .close-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="pageid">BirdsWorld</h1>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2018/09/23/20/56/sparrow-3698507_1280.jpg" alt="Sparrow">
+            <h3>Sparrow</h3>
+            <div class="details">
+            <p>The sparrow is a small bird known for its adaptability and presence in urban areas. They are social birds and often found in flocks.</p>
+            <ul>
+                <li>Scientific Name: Passeridae</li>
+                <li>Average Lifespan: 3-5 years</li>
+                <li>Diet: Seeds, insects, and small fruits</li>
+            </ul>
+            <a id="Home" href="index.html">Back to Home</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2021/12/31/20/18/robin-6906521_1280.jpg" alt="Robin">
+            <h3>Robin</h3>
+            <div class="details">
+            <p>The robin is a small bird known for its red breast and melodious song. They are commonly found in gardens and woodlands.</p>
+            <ul>
+                <li>Scientific Name: Turdus migratorius</li>
+                <li>Average Lifespan: 2 years</li>
+                <li>Diet: Insects, fruits, and berries</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2018/02/25/14/26/blackbird-3180681_640.jpg" alt="Blackbird">
+            <h3>Blackbird</h3>
+            <div class="details">
+            <p>The blackbird is a medium-sized bird known for its black plumage and melodious song. They are found in woodlands and gardens.</p>
+            <ul>
+                <li>Scientific Name: Turdus merula</li>
+                <li>Average Lifespan: 2-3 years</li>
+                <li>Diet: Insects, earthworms, fruits, and berries</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2021/12/21/05/43/blue-bird-6884633_640.jpg" alt="Bluejay">
+            <h3>Bluejay</h3>
+            <div class="details">
+            <p>The bluejay is a medium-sized bird known for its vibrant blue color and distinctive crest. They are found in forests and suburban areas.</p>
+            <ul>
+                <li>Scientific Name: Cyanocitta cristata</li>
+                <li>Average Lifespan: 7 years</li>
+                <li>Diet: Seeds, nuts, insects, and fruits</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2019/06/03/07/44/canary-4248324_640.jpg" alt="Canary">
+            <h3>Canary</h3>
+            <div class="details">
+            <p>The canary is a small bird known for its melodious song and vibrant yellow color. They are popular as pets and are native to the Canary Islands.</p>
+            <ul>
+                <li>Scientific Name: Serinus canaria</li>
+                <li>Average Lifespan: 10 years</li>
+                <li>Diet: Seeds, fruits, and vegetables</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2014/05/11/13/39/bird-341898_640.jpg" alt="Eagle">
+            <h3>Eagle</h3>
+            <div class="details">
+            <p>The eagle is a large bird of prey known for its powerful flight and keen eyesight. They are found in various habitats, including mountains and forests.</p>
+            <ul>
+                <li>Scientific Name: Accipitridae</li>
+                <li>Average Lifespan: 20-30 years</li>
+                <li>Diet: Small mammals, birds, and fish</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2019/06/20/16/02/zebra-finch-4287459_640.jpg" alt="Finch">
+            <h3>Finch</h3>
+            <div class="details">
+            <p>The finch is a small bird known for its colorful plumage and cheerful song. They are found in various habitats, including forests and grasslands.</p>
+            <ul>
+                <li>Scientific Name: Fringillidae</li>
+                <li>Average Lifespan: 2-5 years</li>
+                <li>Diet: Seeds, fruits, and insects</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2023/05/16/06/43/goose-7996662_1280.jpg" alt="Goose">
+            <h3>Goose</h3>
+            <div class="details">
+            <p>The goose is a large waterbird known for its honking call and migratory behavior. They are found in both freshwater and saltwater habitats.</p>
+            <ul>
+                <li>Scientific Name: Anserinae</li>
+                <li>Average Lifespan: 10-24 years</li>
+                <li>Diet: Grass, aquatic plants, and grains</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2022/12/08/03/31/road-hawk-7642407_1280.jpg" alt="Hawk">
+            <h3>Hawk</h3>
+            <div class="details">
+            <p>The hawk is a medium-sized bird of prey known for its sharp vision and powerful flight. They are found in various habitats, including forests and open fields.</p>
+            <ul>
+                <li>Scientific Name: Accipitridae</li>
+                <li>Average Lifespan: 10-20 years</li>
+                <li>Diet: Small mammals, birds, and reptiles</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2023/06/04/23/47/rufus-8041082_640.jpg" alt="Hummingbird">
+            <h3>Hummingbird</h3>
+            <div class="details">
+            <p>The hummingbird is a small bird known for its rapid wing beats and ability to hover in mid-air. They are found in the Americas.</p>
+            <ul>
+                <li>Scientific Name: Trochilidae</li>
+                <li>Average Lifespan: 3-5 years</li>
+                <li>Diet: Nectar, insects, and pollen</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2023/04/13/06/33/birds-7921816_640.jpg" alt="Pigeon">
+            <h3>Pigeon</h3>
+            <div class="details">
+            <p>The pigeon is a medium-sized bird known for its ability to navigate and find its way back home over long distances. They are found in urban areas worldwide.</p>
+            <ul>
+                <li>Scientific Name: Columba livia</li>
+                <li>Average Lifespan: 3-5 years</li>
+                <li>Diet: Seeds, grains, and fruits</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2023/03/10/16/14/swan-7842666_640.jpg" alt="Swan">
+            <h3>Swan</h3>
+            <div class="details">
+            <p>The swan is a large waterbird known for its graceful appearance and long neck. They are found in both freshwater and saltwater habitats.</p>
+            <ul>
+                <li>Scientific Name: Cygnus</li>
+                <li>Average Lifespan: 10-20 years</li>
+                <li>Diet: Aquatic plants, algae, and small invertebrates</li>
+            </ul>
+            </div>
+        </div>
+        
+
+        <script>
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.add('fullscreen');
+                    card.querySelector('.details').style.display = 'block';
+        
+                    const closeButton = document.createElement('button');
+                    closeButton.textContent = 'Close';
+                    closeButton.className = 'close-button';
+                    card.appendChild(closeButton);
+        
+                    closeButton.addEventListener('click', () => {
+                        window.location.href = 'index.html';
+                    });
+                });
+            });
+        </script>
+</body>
+</html>
